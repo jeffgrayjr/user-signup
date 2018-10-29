@@ -1,28 +1,24 @@
-<!doctype html>
-<html>
-    <head>
-        <title>User Signup</title>
-    </head>
-    <body>
+{% extends "base.html" %}
+
+{% block content %}
         <h1>Signup</h1>
         <form action="/" method="post">
             <label for="username">Username</label>
-                <input id="username" name="username" type="text" value="" />
-                <span class="error_message"></span>
+                <input id="username" name="username" type="text" value='{{username}}'' />
+                <span class="error_message">{{username_error}}</span>
             <br><br>
             <label for="password">Password</label>
-                <input id="password" name="password" type="password" value="" />
-                <span class="error_message"></span>
+                <input id="password" name="password" type="password" value='{{password}}' />
+                <span class="error_message">{{password_error}}</span>
             <br><br>          
             <label for="verify">Verify Password</label>
-                <input id="verify "name="verify" type="password" value="" />
-                <span class="error_message"></span>
+                <input id="verify" name="verify" type="password" value='{{verify}}'/>
+                <span class="error_message">{{verification_error}}</span>
             <br><br>
             <label for="email">Email (Optional)</label>
-                <input id="email "name="email" type="text" value="" />
-                <span class="error_message"></span>
+                <input id="email" name="email" type="text" value='{{email}}' />
+                <span class="error_message">{{email_error}}</span>
             <br><br>
             <input type="submit" />
         </form>
-    </body>
-</html>
+{% endblock %}
